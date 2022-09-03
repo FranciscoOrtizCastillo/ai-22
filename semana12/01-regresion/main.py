@@ -1,5 +1,7 @@
-# para ejecutar en windows
-# $env:FLASK_APP = "main.py"
+# para ejecutar
+# Desde anaconda abrir JupyterLab, navegar hasta proyecto y ejecutar terminal
+# Windows : $env:FLASK_APP = "main.py"
+# Bash: export FLASK_APP="main.py"
 # flask run --host=0.0.0.0
 # recuerde agregar el archivo "regresion.h5"
 # pip install flask
@@ -31,12 +33,12 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
+@app.route('/predecir', methods=['POST'])
 def procesar_solicitud():
     if request.method == 'POST':
-        print(request.form['primero'], request.form['segundo'])
+
         if request.form['primero'] and request.form['segundo']:
-            print('datos obtenidos')
+            print('Datos :',request.form['primero'], request.form['segundo'])
             resultado = predecir(
                 int(request.form['primero']),
                 int(request.form['segundo'])
