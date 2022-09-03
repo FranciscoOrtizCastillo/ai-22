@@ -127,4 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-semana12/02-cnn/uploads
+
+semana12/02-cnn/uploads/*
+semana12/02-cnn/VGG16_cats_and_dogs.h5

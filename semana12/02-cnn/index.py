@@ -1,5 +1,6 @@
 # para ejecutar en windows
-# $env:FLASK_APP = "index.py"
+# Windows: $env:FLASK_APP = "index.py"
+# Bash: export FLASK_APP="index.py"
 # flask run --host=0.0.0.0
 # necesario descargar el modelo
 # disponible para descargar en
@@ -10,8 +11,10 @@ from werkzeug.utils import secure_filename
 import os
 
 from keras.models import load_model
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+#from keras.preprocessing.image import load_img
+from tensorflow.keras.preprocessing.image import load_img
+#from keras.preprocessing.image import img_to_array
+from tensorflow.keras.preprocessing.image import img_to_array
 from keras.applications.vgg16 import preprocess_input
 
 app = Flask(__name__)
